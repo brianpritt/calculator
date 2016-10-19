@@ -21,6 +21,7 @@ $(document).ready(function(){
 		var number2 = parseInt($("#add2").val());
 		var result = add(number1, number2);
 		$("#output").text(result);
+		$(this).closest('form').find("input[type=text], textarea").val("");
 	});
 	$("form#subtract").submit(function(event){
 		event.preventDefault();
@@ -28,12 +29,23 @@ $(document).ready(function(){
 		var number2 = parseInt($("#sub2").val());
 		var result = subtract(number1, number2);
 		$("#output").text(result);
+		$(this).closest('form').find("input[type=text], textarea").val("");
 	});
 	$("form#multiply").submit(function(event){
 		event.preventDefault();
 		var number1 = parseInt($("#mult1").val());
 		var number2 = parseInt($("#mult2").val());
-		var result = subtract(number1, number2);
+		var result = multiply(number1, number2);
 		$("#output").text(result);
+		$(this).closest('form').find("input[type=text], textarea").val("");
+	});
+	$("form#divide").submit(function(event){
+		event.preventDefault();
+		var number1 = parseInt($("#divide1").val());
+		var number2 = parseInt($("#divide2").val());
+		var result = divide(number1, number2);
+		$("#output").text(result);
+		$(this).closest('form').find("input[type=text], textarea").val("");
+
 	});
 });
